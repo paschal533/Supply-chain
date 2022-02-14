@@ -67,7 +67,7 @@ contract ItemManager is Ownable {
   }
 
   function triggerPayment(uint _itemIdex) public payable {
-    require(items[_itemIdex]._itemPrice == msg.value, "Only full payment acceted");
+    require(items[_itemIdex]._itemPrice == msg.value, "Only full payment accepted");
     require(items[_itemIdex]._state == SupplyChainState.Created, "item is not found in tha chain");
     emit SupplyChainStep(itemIdex, uint(items[itemIdex]._state), address[items[_itemIndex]._item]);
 
